@@ -31,6 +31,7 @@ public class Application extends javafx.application.Application{
 	
 	private void loadApplicationWindow(){
 		primaryStage.setTitle(config.applicationTitle);
+		primaryStage.setResizable(false);
 		
 		try{
 			root = FXMLLoader.load(getClass().getResource("model/ApplicationModel.fxml"));
