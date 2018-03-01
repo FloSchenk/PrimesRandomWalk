@@ -48,4 +48,17 @@ public class PrimesRandomWalkSolver {
 		}
 	}
 
+	public ArrayList<Integer> getPrimes() {
+		return primes;
+	}
+
+	public ArrayList<XYCoordinateTupel> getTupels() {
+		return tupels;
+	}
+
+	public boolean isWalkLeft() {
+		return walkLeft;
+	}
+
+	
 }
