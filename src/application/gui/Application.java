@@ -8,6 +8,11 @@ import javafx.stage.Stage;
 
 public class Application extends javafx.application.Application{
 	
+	// TODO: remove all syso
+	// TODO write tests
+	// TODO: zoom
+	// TODO: disable button while drawing
+	
 	private String[] arguments;
 	private Stage primaryStage;
 	private AppConfig config;

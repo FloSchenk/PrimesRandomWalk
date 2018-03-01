@@ -14,7 +14,7 @@ public class PrimesRandomWalkSolver extends Task<XYCoordinateTupel> {
   private boolean walkLeft;
 
   public PrimesRandomWalkSolver() {
-    primes = PrimeFinder.findPrimes(1000);//1000000000
+    primes = PrimeFinder.findPrimes(100);//1000000000
     actualPosition = new XYCoordinateTupel(0, 0);
     walkLeft = false;
 
@@ -42,15 +42,38 @@ public class PrimesRandomWalkSolver extends Task<XYCoordinateTupel> {
           walkLeft = true;
         }
         lastXChange = i;
-
-        //TODO update here
+        // TODO: replace sleep with cyclic barrier
+        try {
+        	Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        	e.printStackTrace();
+        }
+        actualPosition = new XYCoordinateTupel(actualPosition.getxCoordinate(),actualPosition.getyCoordinate());
+        updateValue(actualPosition);
+        try {
+        	Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        	e.printStackTrace();
+        }
         System.out.print("(" + actualPosition.getxCoordinate() + " , " + actualPosition.getyCoordinate() + ")");
 
         int temp = actualPosition.getyCoordinate();
         temp++;
         actualPosition.setyCoordinate(temp);
 
-        //TODO hier updaten für GUI Delete SySo
+        
+        try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+        actualPosition = new XYCoordinateTupel(actualPosition.getxCoordinate(),actualPosition.getyCoordinate());
+        updateValue(actualPosition);
+        try {
+        	Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        	e.printStackTrace();
+        }
         System.out.println("(" + actualPosition.getxCoordinate() + " , " + actualPosition.getyCoordinate() + ")");
       }
     }
