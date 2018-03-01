@@ -8,15 +8,13 @@ import javafx.stage.Stage;
 
 public class Application extends javafx.application.Application{
 	
-	// TODO: remove all syso
 	// TODO write tests
-	// TODO: zoom
 	// TODO: disable button while drawing
 	
 	private String[] arguments;
 	private Stage primaryStage;
 	private AppConfig config;
-	private HBox root; //change to the base node
+	private HBox root; 
 	
 	
 	@Override
@@ -45,6 +43,7 @@ public class Application extends javafx.application.Application{
 		}
 		
 		Scene scene = new Scene(root, config.windowWidth, config.windowHeight);
+		scene.getStylesheets().add(Application.class.getResource("stylesheets/style.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

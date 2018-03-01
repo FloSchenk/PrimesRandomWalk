@@ -1,38 +1,40 @@
 package application.config;
 
-public enum AppConfig{
+public enum AppConfig {
 	instance;
-	
+
 	public final String applicationTitle = "Prime Number Random Walk";
 	public final int windowWidth = 1400;
 	public final int windowHeight = 850;
-	
-	//GridSizes
-	public final int[] gridSizes1x = {-3,7};
+
+	// GridSizes
+
+	public final int gridTicksPerX = 10;
+	public final int gridTicksPerY = 10;
+
+	public final int[] gridSizes1x = { -3, 7 };
 	public final int gridSizes1y = 5;
-	
-	public final int[] gridSizes2x = {-5, 15};
+	public final int gridTick1x = (gridSizes1x[1] - gridSizes1x[0]) / gridTicksPerX;
+	public final int gridTick1y = 1;
+
+	public final int[] gridSizes2x = { -2, 10 };
 	public final int gridSizes2y = 30;
-	
-	public final int[] gridSizes3x = {-10, 75};
+	public final int gridTick2x = (gridSizes2x[1] - gridSizes2x[0]) / gridTicksPerX;
+	public final int gridTick2y = gridSizes2y / gridTicksPerY;
+
+	public final int[] gridSizes3x = { -5, 70 };
 	public final int gridSizes3y = 180;
-	
-	public final int[] gridSizes4x = {-300, 80};
+	public final int gridTick3x = (gridSizes3x[1] - gridSizes3x[0]) / gridTicksPerX;
+	public final int gridTick3y = gridSizes3y / gridTicksPerY;
+
+	public final int[] gridSizes4x = { -350, 70 };
 	public final int gridSizes4y = 1300;
-	
-	public final int[] gridSizes5x = {-500,1000};
+	public final int gridTick4x = (gridSizes4x[1] - gridSizes4x[0]) / gridTicksPerX;
+	public final int gridTick4y = gridSizes4y / gridTicksPerY;
+
+	public final int[] gridSizes5x = { -410, 800 };
 	public final int gridSizes5y = 10000;
-	
-	public final int[] gridSizes6x = {-5000, 2000};
-	public final int gridSizes6y = 85000;
-	
-	public final int[] gridSizes7x = {-25000, 5000};
-	public final int gridSizes7y = 700000;
-	
-	public final int[] gridSizes8x = {-30000, 30000};
-	public final int gridSizes8y = 6500000;
-	
-	public final int[] gridSizes9x = {-200000, 100000};
-	public final int gridSizes9y = 60000000;
-	
+	public final int gridTick5x = (gridSizes5x[1] - gridSizes5x[0]) / gridTicksPerX;
+	public final int gridTick5y = gridSizes5y / gridTicksPerY;
+
 }
