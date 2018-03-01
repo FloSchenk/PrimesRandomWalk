@@ -24,11 +24,11 @@ public class PrimesRandomWalkSolver extends Task<XYCoordinateTupel> {
 
   @Override
   protected XYCoordinateTupel call() throws Exception {
-    // TODO Auto-generated method stub
+    doTheRandomWalk();
     return null;
   }
 
-  public void doTheRandomWalk() {
+  private void doTheRandomWalk() {
     double time = System.currentTimeMillis();
     int lastXChange = 0;
 
@@ -54,10 +54,11 @@ public class PrimesRandomWalkSolver extends Task<XYCoordinateTupel> {
           positionBeforeXChange.setyCoordinate(temp);
         }
 
-        //TODO hier updaten für GUI
+        //TODO hier updaten für GUI Delete SySo
         System.out.println("(" + positionBeforeXChange.getxCoordinate() + " , " + positionBeforeXChange.getyCoordinate() + ")(" + positionAfterXChange.getxCoordinate() + " , " + positionAfterXChange.getyCoordinate() + ")");
       }
     }
+    //TODO Delete Syso
     System.out.println("Dauer für 10^9: " + (System.currentTimeMillis() - time));
   }
 
