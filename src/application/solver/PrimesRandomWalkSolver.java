@@ -10,14 +10,12 @@ import javafx.concurrent.Task;
 public class PrimesRandomWalkSolver extends Task<XYCoordinateTupel> {
 
   private boolean[] primes;
-  private XYCoordinateTupel positionBeforeXChange;
-  private XYCoordinateTupel positionAfterXChange;
+  private XYCoordinateTupel actualPosition;
   private boolean walkLeft;
 
   public PrimesRandomWalkSolver() {
-    primes = PrimeFinder.findPrimes(1000000000);
-    positionBeforeXChange = new XYCoordinateTupel(0, 0);
-    positionAfterXChange = new XYCoordinateTupel(0, 0);
+    primes = PrimeFinder.findPrimes(1000);//1000000000
+    actualPosition = new XYCoordinateTupel(0, 0);
     walkLeft = false;
 
   }
@@ -28,7 +26,7 @@ public class PrimesRandomWalkSolver extends Task<XYCoordinateTupel> {
     return null;
   }
 
-  private void doTheRandomWalk() {
+  public void doTheRandomWalk() {
     double time = System.currentTimeMillis();
     int lastXChange = 0;
 
@@ -36,26 +34,24 @@ public class PrimesRandomWalkSolver extends Task<XYCoordinateTupel> {
 
       if (primes[i]) {
 
-        positionBeforeXChange.setxCoordinate(positionAfterXChange.getxCoordinate());
-
         if (walkLeft) {
-          positionAfterXChange.setxCoordinate(positionBeforeXChange.getxCoordinate() - (i - lastXChange));
+          actualPosition.setxCoordinate(actualPosition.getxCoordinate() - (i - lastXChange));
           walkLeft = false;
         } else {
-          positionAfterXChange.setxCoordinate(positionBeforeXChange.getxCoordinate() + (i - lastXChange));
+          actualPosition.setxCoordinate(actualPosition.getxCoordinate() + (i - lastXChange));
           walkLeft = true;
         }
         lastXChange = i;
 
-        if (i > 2) {
-          int temp = positionBeforeXChange.getyCoordinate();
-          temp++;
-          positionAfterXChange.setyCoordinate(temp);
-          positionBeforeXChange.setyCoordinate(temp);
-        }
+        //TODO update here
+        System.out.print("(" + actualPosition.getxCoordinate() + " , " + actualPosition.getyCoordinate() + ")");
+
+        int temp = actualPosition.getyCoordinate();
+        temp++;
+        actualPosition.setyCoordinate(temp);
 
         //TODO hier updaten für GUI Delete SySo
-        System.out.println("(" + positionBeforeXChange.getxCoordinate() + " , " + positionBeforeXChange.getyCoordinate() + ")(" + positionAfterXChange.getxCoordinate() + " , " + positionAfterXChange.getyCoordinate() + ")");
+        System.out.println("(" + actualPosition.getxCoordinate() + " , " + actualPosition.getyCoordinate() + ")");
       }
     }
     //TODO Delete Syso
