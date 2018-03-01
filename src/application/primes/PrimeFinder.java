@@ -1,7 +1,10 @@
 package application.primes;
 
+import java.util.ArrayList;
+
 public class PrimeFinder {
-	public static boolean[] findPrimes(int max) {
+	public static ArrayList<Integer> findPrimes(int max) {
+		ArrayList<Integer> allPrimes = new ArrayList<>();
 		final int maxprim = (int) Math.sqrt(max) + 2;
 		boolean[] zahlen = new boolean[max]; // alle Zahlen bis max
 		for (int i = 0; i < max; i++)
@@ -18,6 +21,11 @@ public class PrimeFinder {
 		zahlen[1] = false;
 		zahlen[2] = true;
 		
-		return zahlen;
+		for (int i = 0; i < zahlen.length; i++) {
+			if (zahlen[i]) {
+				allPrimes.add(i);
+			}
+		}
+		return allPrimes;
 	}
 }
