@@ -1,5 +1,6 @@
  # Prime Numbers Random Walk
-
+ ## Screenshot
+ ![Screenshot](https://i.imgur.com/FMjJZVz.png)
  ## Java 8
 > For this project the minimum JDK version "1.8.0.152" is recommended.<br />
 > To check which version you currently using, go to the cmd<br />
@@ -27,19 +28,3 @@
 > Java code with your fxml.<br />
 
 **Download:** *http://gluonhq.com/products/scene-builder/*
- ## Usage
- ### src.application.Main.java
- > Creates and starts the Application.
- > *  Use setArguments() and startApplication() in order to make the JavaFX program run
- 
- ### src.application.gui.Application.java
- > Defines basic style of the application including:
- > *  Title of Application
- > *  Size of Application
- > *  Load base Node of Application
- 
- ### src.application.gui.controller.ApplicationController.java
- > Handle all events from the model and offers access to all fx:id defined in the *.fxml files, which use that controller.
- > *  Use @FXML to reffer ids or methods to the model
- 
- 
